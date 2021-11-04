@@ -10,6 +10,10 @@ sumE = data.groupby(['d_mm'])["E_kev"].sum()
 
 E = sumE.to_numpy()
 
+E = E / np.amax(E)
+
 plt.plot(E)
 
 plt.show()
+
+np.savetxt(E, "out.csv")
