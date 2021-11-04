@@ -32,7 +32,7 @@
 #define ANALYSISMANAGER_HH 
 
 #include "globals.hh"
-#include "g4csv.hh"	//comma separated values (output)
+#include "G4AnalysisManager.hh"	//comma separated values (output)
 
 // Define the total number of columns in the ntuple
 const G4int MaxNtCol = 9;
