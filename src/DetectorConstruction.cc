@@ -81,6 +81,8 @@ DetectorConstruction::~DetectorConstruction(){
 
 G4VPhysicalVolume* DetectorConstruction::Construct()
 {
+	G4double accuracy = 0.01;
+	
 	//Define Vacuum
 	G4double A = 1.01*g/mole;
 	G4double Z = 1.;
@@ -133,9 +135,11 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 	
 	//water phantom
 	//slices
-	nOfSlices = 400 ;
-	G4double sliceWidth = 1.*mm;
+	G4double maxLenght = 500*mm;
+	G4double sliceWidth = accuracy;
 	
+	nOfSlices = (int) ( maxLenght / accuracy ) ;
+		
 	G4double phantom_x = 200.*mm;
 	G4double phantom_y = 200.*mm;
 	G4double phantom_z = nOfSlices * sliceWidth ;
